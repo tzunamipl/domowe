@@ -13,8 +13,8 @@ on:
         - Gl-Kuz
         - Glogow 
 jobs:
-  build:
+  Sprawdzanie_opoznienia_pociagu:
     runs-on: ubuntu-latest
     steps:
-      - name: Run a one-line script
+      - name: Test
         run: echo Hello, world!
