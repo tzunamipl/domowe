@@ -29,7 +29,7 @@ jobs:
     # SMTP server address
           server_address: smtp.gmail.com
     # SMTP server port
-          server_port: 465
+          server_port: 587
     # Authenticate as this user to SMTP server
           username: andrzejwarszawski456@gmail.com
     # Authenticate with this password to SMTP server
