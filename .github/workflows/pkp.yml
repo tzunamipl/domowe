@@ -1,0 +1,20 @@
+name: pkp
+
+on:
+  workflow_dispatch:
+    inputs:
+      line:
+        description: 'Linia'
+        required: true
+        default: 'Kuz-Gl' 
+        type: choice
+        options:
+        - Kuz-Gl
+        - Gl-Kuz
+        - Glogow 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
