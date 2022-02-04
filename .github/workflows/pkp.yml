@@ -31,7 +31,7 @@ jobs:
     # SMTP server port
           server_port: 465
     # Authenticate as this user to SMTP server
-          username: andrzejwarszawski456
+          username: andrzejwarszawski456@gmail.com
     # Authenticate with this password to SMTP server
           password: jagrhkfqu6rtgcqubguagfuare
     # Subject of mail message
