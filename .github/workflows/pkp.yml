@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test
-        run: pkp.sh
+        run: ./pkp.sh
       - name: Wyslij maila
   # You may pin to the exact commit or the version.
   # uses: dawidd6/action-send-mail@ba46013833657153f91b33e0f111e15eb5574a82
