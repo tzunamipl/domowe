@@ -19,7 +19,9 @@ jobs:
   Sprawdzanie_opoznienia_pociagu:
     runs-on: ubuntu-latest
     steps:
-      - name: Test
+      - name: Uprawnienia
+        run: chmod 700 ./pkp.sh
+      - name: Script
         run: ./pkp.sh
       - name: Wyslij maila
   # You may pin to the exact commit or the version.
