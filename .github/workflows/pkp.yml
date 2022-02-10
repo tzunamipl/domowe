@@ -22,7 +22,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.4.0
       - name: Boot
-        run: ls -la
+        run: |
+              ls -la
+              chmod 700 pkp.sh
       - name: Script
         run: ./pkp.sh
       - name: Wyslij maila
