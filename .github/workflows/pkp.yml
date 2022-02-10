@@ -19,8 +19,8 @@ jobs:
   Sprawdzanie_opoznienia_pociagu:
     runs-on: ubuntu-latest
     steps:
-      - name: Uprawnienia
-        run: chmod 700 ./pkp.sh
+      - name: Boot
+        run: ls -la
       - name: Script
         run: ./pkp.sh
       - name: Wyslij maila
