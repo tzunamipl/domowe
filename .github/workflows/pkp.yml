@@ -45,7 +45,7 @@ jobs:
     # Recipients mail addresses (separated with comma)
           to: poznanski.krzysztof@gmail.com
     # Full name of mail sender (might be with an email address specified in <>)
-          from: noreply@noreply.com
+          from: Krzysztof Poznański <poznanski.krzysztof@gmail.com>
     # Whether this connection use TLS (default is true if server_port is 465)
           secure: # optional
     # Body of mail message (might be a filename prefixed with file:// to read from)
