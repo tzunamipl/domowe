@@ -19,6 +19,8 @@ jobs:
   Sprawdzanie_opoznienia_pociagu:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
       - name: Boot
         run: ls -la
       - name: Script
