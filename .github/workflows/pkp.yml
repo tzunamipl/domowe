@@ -25,7 +25,10 @@ jobs:
               ls -la
               chmod 700 pkp.sh
       - name: Script
-        run: ./pkp.sh
+        run: |
+              ./pkp.sh
+              export DATA=$(cat date)
+              echo "::set-env name=SUBJECT::$DATA"
       - name: Wyslij maila
   # You may pin to the exact commit or the version.
   # uses: dawidd6/action-send-mail@ba46013833657153f91b33e0f111e15eb5574a82
@@ -40,7 +43,7 @@ jobs:
     # Authenticate with this password to SMTP server
           password: jagrhkfqu6rtgcqubguagfuare
     # Subject of mail message
-          subject: Test
+          subject: $SUBJECT
     # Recipients mail addresses (separated with comma)
           to: poznanski.krzysztof@gmail.com
     # Full name of mail sender (might be with an email address specified in <>)
