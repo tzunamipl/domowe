@@ -39,11 +39,11 @@ jobs:
     # SMTP server port
           server_port: 587
     # Authenticate as this user to SMTP server
-          username: andrzejwarszawski456@gmail.com
+          username: ${{ secrets.EMAIL }}
     # Authenticate with this password to SMTP server
-          password: jagrhkfqu6rtgcqubguagfuare
+          password: ${{ secrets.LOGIN }}
     # Subject of mail message
-          subject: $SUBJECT
+          subject: ${{ SUBJECT }}
     # Recipients mail addresses (separated with comma)
           to: poznanski.krzysztof@gmail.com
     # Full name of mail sender (might be with an email address specified in <>)
