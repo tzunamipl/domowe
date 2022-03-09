@@ -43,7 +43,7 @@ jobs:
     # Authenticate with this password to SMTP server
           password: ${{ secrets.LOGIN }}
     # Subject of mail message
-          subject: ${{ SUBJECT }}
+          subject: date
     # Recipients mail addresses (separated with comma)
           to: poznanski.krzysztof@gmail.com
     # Full name of mail sender (might be with an email address specified in <>)
