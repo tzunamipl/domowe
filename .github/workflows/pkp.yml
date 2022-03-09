@@ -27,6 +27,6 @@ jobs:
       - name: Script
         run: |
               ./pkp.sh
-              traceroute rozklad-pkp.pl
+              ping rozklad-pkp.pl
               export DATA=$(cat date)
               export SUBJECT=${DATA}
