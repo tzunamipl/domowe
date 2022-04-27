@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 date
 echo "Wszystko OK"
 date=$(date '+%d.%m.%y')
