@@ -1,7 +1,7 @@
 name: 'Wykonaj Akcję'
 
 runs:
-  suing: "composite"
+  using: "composite"
   steps:
     - name: Wydrukuj zmienne
       shell: bash
