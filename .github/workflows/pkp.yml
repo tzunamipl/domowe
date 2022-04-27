@@ -21,10 +21,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.4.0
+
       - name: Boot
         run: |
               ls -la
               chmod 700 pkp.sh
+
+      - name: Zadania
+        shell: bash
+        run: |
+          date=$(date '+%d.%m.%y')
+          URL="https://portalpasazera.pl/Opoznienia?s=2&sid=HSnwqmmcWAoITYTvm1TZNB8lOWRAPLpwsQscc2FNscc2FJbnfssjTo0TZgXIDjFyXcIpooq1lPscc2Fcb4PTavA10CnqYBMw1JhvLmscc2FZnezLDsWWFBTtTscc2BfkXBhDscc2FeB7d5eKHyonEhscc2Fb"
+          echo $URL
+          wget --timeout=1 --tries=5 --retry-connrefused -O - $URL || true
+
       - name: Script
         shell: bash
         run: |
