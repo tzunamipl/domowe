@@ -9,6 +9,7 @@ runs:
         echo ${SEKRET}
         echo ${ZMIENNA}
         echo ${ZMIENNA_2}
+        sleep 60
     - name: Sprawdz użytkownika
       shell: bash
       run: |

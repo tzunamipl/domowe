@@ -26,6 +26,7 @@ jobs:
               ls -la
               chmod 700 pkp.sh
       - name: Script
+        shell: bash
         run: |
               ./pkp.sh
               ping rozklad-pkp.pl
