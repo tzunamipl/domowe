@@ -6,6 +6,11 @@ on:
       - github_webhook
       - manual_webhook
   workflow_dispatch:
+    # Workflow can be triggered with http request
+    # curl --request POST --url 'https://api.github.com/repos/tzunamipl/domowe/dispatches' --header 'authorization: Bearer [token]' -d '{"event_type": "manual_webhook", "client_payload": {"PAYLOAD_VARIABLE": "trolololo"}}'
+    # lub
+    # curl -i -u [user]:[token] --request POST --url 'https://api.github.com/repos/tzunamipl/domowe/dispatches' -d '{"event_type": "manual_webhook", "client_payload": {"PAYLOAD_VARIABLE": "trolololo"}}'
+    # Token must be set-up in users configuration, Settings -> Developer settings -> Personal access tokens
     inputs:
       VARIABLE:
         description: 'Dowolna zmienna'
@@ -33,7 +38,7 @@ jobs:
           echo "ZMIENNA=${ZMIENNA_env}" >> $GITHUB_ENV
           echo "ZMIENNA_2=${ZMIENNA_2_env}" >> $GITHUB_ENV
       - name: Akcja zagnieżdżona
-        uses: ./github/actions/do_stuff
+        uses: ./.github/actions/do_stuff
   Rownolegla-akcja:
     runs-on: ubuntu-latest
     steps:
