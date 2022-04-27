@@ -1,4 +1,4 @@
-name: pkp
+name: Wykonywanie akcji zagnieżdżonych
 
 on:
   repository_dispatch:
