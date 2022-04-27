@@ -17,6 +17,7 @@ on:
 jobs:
   Sprawdzanie_opoznienia_pociagu:
     runs-on: ubuntu-latest
+    environment: pkp_vars
     steps:
       - name: Checkout
         uses: actions/checkout@v2.4.0
