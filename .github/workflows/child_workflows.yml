@@ -1,0 +1,42 @@
+name: pkp
+
+on:
+  repository_dispatch:
+    types:
+      - github_webhook
+      - manual_webhook
+  workflow_dispatch:
+    inputs:
+      VARIABLE:
+        description: 'Dowolna zmienna'
+        required: true
+        default: 'wartosc_1'
+        type: choice
+        options:
+        - wartosc_1
+        - wartosc_2
+        - wartosc_3
+jobs:
+  Wywolanie-akcji:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git chekout
+        uses: actions/checkout@v2.4.0
+      - name: Zmienne środowiskowe
+        #Przypisywanie sekretów do zmiennych srodiwskowych, w przeciwnym wypadku nie będą mogły być użyte w zagnieżdzonej akcji
+        env:
+          SEKRET_env: ${{ secrets.SECRET_1 }}
+          ZMIENNA_env: ${{ github.events.inputs.VARIABLE }}
+          ZMIENNA_2_env: ${{ github.event.client_payload.PAYLOAD_VARIABLE }}
+        run: |
+          echo "SEKRET=${SEKRET_env}" >> $GITHUB_ENV
+          echo "ZMIENNA=${ZMIENNA_env}" >> $GITHUB_ENV
+          echo "ZMIENNA_2=${ZMIENNA_2_env}" >> $GITHUB_ENV
+      - name: Akcja zagnieżdżona
+        uses: ./github/actions/do_stuff
+  Rownolegla-akcja:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Data
+        run: |
+          date

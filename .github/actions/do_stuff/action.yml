@@ -1,0 +1,15 @@
+name: 'Wykonaj Akcję'
+
+runs:
+  suing: "composite"
+  steps:
+    - name: Wydrukuj zmienne
+      shell: bash
+      run: |
+        echo ${SEKRET}
+        echo ${ZMIENNA}
+        echo ${ZMIENNA_2}
+    - name: Sprawdz użytkownika
+      shell: bash
+      run: |
+        whoami
