@@ -1,7 +1,6 @@
 # Workflow to trigger inested workflows
 
 name: Wykonywanie akcji zagnieżdżonych
-description: 'Workflow to trigger inested workflows'
 
 on:
   repository_dispatch:
