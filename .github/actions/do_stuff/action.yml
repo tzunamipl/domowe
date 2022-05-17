@@ -1,4 +1,5 @@
 name: 'Wykonaj Akcję'
+description: 'Opis'
 
 runs:
   using: "composite"
