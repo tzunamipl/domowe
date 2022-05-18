@@ -14,7 +14,7 @@ on:
     # curl -i -u [user]:[token] --request POST --url 'https://api.github.com/repos/tzunamipl/domowe/dispatches' -d '{"event_type": "manual_webhook", "client_payload": {"PAYLOAD_VARIABLE": "trolololo"}}'
     # Token must be set-up in users configuration, Settings -> Developer settings -> Personal access tokens
     inputs:
-      VARIABLE:
+      VARIABLE_I:
         description: 'Dowolna zmienna'
         required: true
         default: 'wartosc_1'
@@ -23,6 +23,14 @@ on:
         - wartosc_1
         - wartosc_2
         - wartosc_3
+      VARIABLE_II:
+        description: 'Opis'
+        required: true
+      DOorDONT:
+        type: boolean
+        description: 'Być albo nie byść'
+        required: true
+        default: true
 jobs:
 
   Wywolanie-akcji-na-tescie:
@@ -36,7 +44,7 @@ jobs:
         env:
           SEKRET_env: ${{ secrets.SECRET_1 }}
           VAR_env: ${{ env.ENV_VAR }}
-          ZMIENNA_env: ${{ github.events.inputs.VARIABLE }}
+          ZMIENNA_env: ${{ github.events.inputs.VARIABLE_II }}
           ZMIENNA_2_env: ${{ github.event.client_payload.PAYLOAD_VARIABLE }}
         run: |
           echo "TEN_SEKRET_ZADZIALA=${SEKRET_env}" >> $GITHUB_ENV
