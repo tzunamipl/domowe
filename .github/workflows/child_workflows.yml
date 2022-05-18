@@ -78,7 +78,7 @@ jobs:
           maven-version: 3.8.2
       - name: Tests
         run: |
-          cd maven
+          cd ./maven
           mvn test
   # Test results
       - name: Test Report (Dorny)
@@ -87,13 +87,13 @@ jobs:
         if: success() || failure()    # run this step even if previous step failed
         with:
           name: Dorny test results            # Name of the check run which will be created
-          path: project/target/**/*.xml    # Path to test results
+          path: maven/target/**/*.xml    # Path to test results
           reporter: java-junit        # Format of test results
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
-          files: "project/target/**/*.xml"
+          files: "maven/target/**/*.xml"
 
   Rownolegla-akcja:
     runs-on: ubuntu-latest
