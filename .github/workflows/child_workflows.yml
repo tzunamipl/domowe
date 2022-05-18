@@ -79,7 +79,7 @@ jobs:
       - name: Tests
         run: |
           cd maven
-          mv test
+          mvn test
 
   Rownolegla-akcja:
     runs-on: ubuntu-latest
