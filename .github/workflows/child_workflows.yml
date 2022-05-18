@@ -56,7 +56,7 @@ jobs:
         #Przypisywanie sekretów do zmiennych srodiwskowych, w przeciwnym wypadku nie będą mogły być użyte w zagnieżdzonej akcji
         env:
           SEKRET_env: ${{ secrets.SECRET_1 }}
-          VAR_env: ${{ env.ENV_VAR }}
+          VAR_env: ${{ secrets.ENV_VAR }}
           ZMIENNA_env: ${{ github.events.inputs.VARIABLE }}
           ZMIENNA_2_env: ${{ github.event.client_payload.PAYLOAD_VARIABLE }}
         run: |
@@ -80,6 +80,20 @@ jobs:
         run: |
           cd maven
           mvn test
+  # Test results
+      - name: Test Report (Dorny)
+        uses: dorny/test-reporter@v1
+        # When used in composite workflow "if" causes to fail
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: Dorny test results            # Name of the check run which will be created
+          path: project/target/**/*.xml    # Path to test results
+          reporter: java-junit        # Format of test results
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: "project/target/**/*.xml"
 
   Rownolegla-akcja:
     runs-on: ubuntu-latest
