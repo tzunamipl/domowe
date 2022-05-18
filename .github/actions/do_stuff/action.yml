@@ -7,12 +7,13 @@ runs:
     - name: Wydrukuj zmienne
       shell: bash
       run: |
-        echo ${TEN_SEKRET_ZADZIALA}
-        echo ${TEN_SEKRET_NIE_ZADZIALA}
-        echo ${ZMIENNA_ZE_SRODOWISKA}
-        echo ${ZMIENNA}
-        echo ${ZMIENNA_2}
+        echo ${TEN_SEKRET_ZADZIALA} > plik
+        echo ${TEN_SEKRET_NIE_ZADZIALA} >> plik
+        echo ${ZMIENNA_ZE_SRODOWISKA} >> plik
+        echo ${ZMIENNA} >> plik
+        echo ${ZMIENNA_2} >> plik
         sleep 60
+        cat plik
     - name: Sprawdz użytkownika
       shell: bash
       run: |
