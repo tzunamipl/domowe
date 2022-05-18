@@ -61,7 +61,7 @@ jobs:
           ZMIENNA_2_env: ${{ github.event.client_payload.PAYLOAD_VARIABLE }}
         run: |
           echo "TEN_SEKRET_ZADZIALA=${SEKRET_env}" >> $GITHUB_ENV
-          echo "ZMIENNA_ZE_SRODOWISKA=${ZMIENNA_env}" >> $GITHUB_ENV
+          echo "ZMIENNA_ZE_SRODOWISKA=${VAR_env}" >> $GITHUB_ENV
           echo "ZMIENNA=${ZMIENNA_env}" >> $GITHUB_ENV
           echo "ZMIENNA_2=${ZMIENNA_2_env}" >> $GITHUB_ENV
       - name: Akcja zagnieżdżona
