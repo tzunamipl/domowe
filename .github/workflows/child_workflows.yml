@@ -107,9 +107,18 @@ jobs:
 
   Sprawdzenie-pliku:
     runs-on: ubuntu-latest
+    environment: int
     needs: [Budowanie-mavena, Wywolanie-akcji-na-incie]
     steps:
-      - name: Data
+      - name: Sprawdzanie plikow
+        run: |
+          ls -l
+
+  Sprawdzenie-pliku-na-srodowisku:
+    runs-on: ubuntu-latest
+    needs: [Budowanie-mavena, Wywolanie-akcji-na-incie]
+    steps:
+      - name: Sprawdzanie plikow
         run: |
           ls -l
 
