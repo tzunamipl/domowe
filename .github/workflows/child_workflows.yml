@@ -140,5 +140,13 @@ jobs:
     steps:
       - name: Data
         run: |
-          date
-          sleep 34
+          sleep 26
+          exit 1
+
+  Ta-akcja-sie-nie-wykona-bo-jest-po-failu:
+    runs-on: ubuntu-latest
+    needs: [Szeregowa-akcja, Szeregowa-akcja-bis]
+    steps:
+      - name: Data
+        run: |
+          exit 0
