@@ -6,8 +6,12 @@ runs:
   steps:
     - name: Wydrukuj zmienne
       shell: bash
+      env:
+        TEN_SEKRET_NIE_ZADZIALA: ${{ secrets.SECRET_2 }}
       run: |
-        echo ${SEKRET}
+        echo ${TEN_SEKRET_ZADZIALA}
+        echo ${TEN_SEKRET_NIE_ZADZIALA}
+        echo ${ZMIENNA_ZE_SRODOWISKA}
         echo ${ZMIENNA}
         echo ${ZMIENNA_2}
         sleep 60
@@ -15,3 +19,5 @@ runs:
       shell: bash
       run: |
         whoami
+        sleep 10
+        date
