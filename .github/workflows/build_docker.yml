@@ -19,7 +19,8 @@ jobs:
       - name: Build docker
         run: |
           cd ./example_app
-          docker build -t kanalizer/poznan:latest
+          docker build -t getting-started .
       - name: Push image
         run: |
+          docker tag getting-started kanalizer/poznan:latest
           docker push kanalizer/poznan:latest
