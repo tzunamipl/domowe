@@ -3,6 +3,10 @@
 name: Budowanie paczki dockerowej
 
 on:
+  push:
+    branches:
+      - 'main'
+      - 'feature/**'
   repository_dispatch:
     types:
       - github_webhook
