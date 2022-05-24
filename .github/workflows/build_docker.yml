@@ -17,7 +17,9 @@ jobs:
       - name: Git chekout
         uses: actions/checkout@v2.4.0
       - name: Build docker
-        continue-on-error: true
         run: |
           cd ./example_app
-          docker build
+          docker build -t kanalizer/poznan:latest
+      - name: Push image
+        run: |
+          docker push kanalizer/poznan:latest
