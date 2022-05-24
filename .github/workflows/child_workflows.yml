@@ -24,7 +24,7 @@ on:
         - wartosc_2
         - wartosc_3
       VARIABLE_II:
-        description: 'Opis'
+        description: 'Dowolny ciag znakow'
         required: true
       DOorDONT:
         type: boolean

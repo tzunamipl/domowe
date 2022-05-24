@@ -1,0 +1,23 @@
+# Workflow to trigger inested workflows
+
+name: Budowanie paczki dockerowej
+
+on:
+  repository_dispatch:
+    types:
+      - github_webhook
+      - manual_webhook
+  workflow_dispatch:
+
+jobs:
+
+  Budowanie-paczek:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git chekout
+        uses: actions/checkout@v2.4.0
+      - name: Build docker
+        continue-on-error: true
+        run: |
+          cd ./example_app
+          docker build
