@@ -23,7 +23,7 @@ jobs:
       - name: Login to dockerhub
         uses: docker/login-action@v1
         with:
-          registry: registry.hub.docker.com
+          registry: docker.io
           username: kanalizer
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push image
