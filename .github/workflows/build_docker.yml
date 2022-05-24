@@ -21,11 +21,13 @@ jobs:
           cd ./example_app
           docker build -t getting-started .
       - name: Login to dockerhub
+        env:
+          PASSWORD: ${{ secret.DOCKER_PASSWORD }}
         uses: docker/login-action@v1
         with:
           registry: kanalizer/poznan
           username: kanalizer
-          password: ${{ secret.DOCKER_PASSWORD }}
+          password: ${{ env.PASSWORD }}
       - name: Push image
         run: |
           docker tag getting-started kanalizer/poznan:latest
