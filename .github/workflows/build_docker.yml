@@ -33,4 +33,4 @@ jobs:
       - name: Push image
         run: |
           docker tag getting-started kanalizer/poznan:latest
-          docker push kanalizer/poznan:latest
+          docker push kanalizer/poznan:0.0.1
