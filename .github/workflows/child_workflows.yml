@@ -44,7 +44,7 @@ jobs:
         env:
           SEKRET_env: ${{ secrets.SECRET_1 }}
           VAR_env: ${{ env.ENV_VAR }}
-          ENV_NAME: ${{ environment.name }}
+          ENV_NAME: ${{ env.name }}
           ZMIENNA_env: ${{ github.events.inputs.VARIABLE_II }}
           ZMIENNA_2_env: ${{ github.event.client_payload.PAYLOAD_VARIABLE }}
         run: |
