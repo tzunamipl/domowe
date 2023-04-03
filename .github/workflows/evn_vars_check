@@ -1,0 +1,23 @@
+# Sprawdzanie zmiennych srodowiskowych
+
+name: Check environemnt variable
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'feature/**'
+  repository_dispatch:
+    types:
+      - github_webhook
+      - manual_webhook
+  workflow_dispatch:
+
+jobs:
+  Sprawdzanie:
+    runs-on: ubuntu-latest
+    environemnt: tes
+    steps:
+      - name: Check
+        run: |
+          echo ${environemnt}
