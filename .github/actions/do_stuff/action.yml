@@ -15,6 +15,7 @@ runs:
         echo ${ZMIENNA_ZE_SRODOWISKA} >> plik
         echo ${ZMIENNA} >> plik
         echo ${ZMIENNA_2} >> plik
+        echo "Zmianna wydopyta ze zmiennecyh w actionie"
         echo ${{ env.ZMIENNA_Z_ENVOW }}
         sleep 60
         cat plik
