@@ -16,7 +16,7 @@ runs:
         echo ${ZMIENNA} >> plik
         echo ${ZMIENNA_2} >> plik
         echo "Zmianna wydobyta ze zmiennecyh w actionie"
-        echo ${{ZMIENNA_Z_ENVOW}}
+        echo ${ZMIENNA_Z_ENVOW}
         sleep 60
         cat plik
     - name: Sprawdz użytkownika
