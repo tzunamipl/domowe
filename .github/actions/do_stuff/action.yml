@@ -1,6 +1,9 @@
 name: 'Wykonaj Akcję'
 description: 'Opis'
 
+env:
+  ZMIENNA_Z_ENVOW: "To jest zmienna zagneizdzona w action"
+
 runs:
   using: "composite"
   steps:
@@ -12,6 +15,7 @@ runs:
         echo ${ZMIENNA_ZE_SRODOWISKA} >> plik
         echo ${ZMIENNA} >> plik
         echo ${ZMIENNA_2} >> plik
+        echo ${{ env.ZMIENNA_Z_ENVOW }}
         sleep 60
         cat plik
     - name: Sprawdz użytkownika
